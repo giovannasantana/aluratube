@@ -30,14 +30,32 @@ const StyledHeader = styled.div`
         height: 80px;
         border-radius: 50%;
     }
+    .user-info{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 16px 32px;
+        gap: 16px;
+    }
 `;
 function Header() {
     return (
         <StyledHeader>
             {/*<img src="banner" /> */}
-            <img src={`https://github.com/${config.github}.png`} />
-            {config.name}
-            {config.job}
+
+            <section className="user-info">
+                <img src={`https://github.com/${config.github}.png`} />
+                <div>
+                    <h2>
+                        {config.name}
+                    </h2>
+                </div>
+                <div>
+                    <h2>
+                        {config.job}
+                    </h2>
+                </div>
+            </section>
         </StyledHeader>
     )
 }
