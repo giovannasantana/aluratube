@@ -1,3 +1,5 @@
+import config from "../config.json"
+
 function HomePage() {
     const estiloDaHomePage = { backgroundColor: "red" };
     return (
@@ -11,6 +13,7 @@ function HomePage() {
 
 export default HomePage
 
+// Componentes em um mesmo arqueivo (podem ser feitos em arquivos diferentes)
 function Menu() {
     return (
         <div>
@@ -22,7 +25,10 @@ function Menu() {
 function Header() {
     return (
         <div>
-            Header
+            <img src="banner" />
+            <img src={`https://github.com/${config.github}.png`} />
+            {config.name}
+            {config.job}
         </div>
     )
 }
