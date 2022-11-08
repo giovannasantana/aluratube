@@ -1,6 +1,7 @@
 function HomePage() {
+    const estiloDaHomePage = { backgroundColor: "red" };
     return (
-        <div style={{ backgroundColor: "red" }}>Bem vindo ao AluraTube!</div>
+        <div style={estiloDaHomePage}>Bem vindo ao AluraTube!</div>
     );
 }
 
