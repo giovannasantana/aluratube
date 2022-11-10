@@ -1,5 +1,21 @@
 {
     "name": "Giovanna Lima",
     "job": "Desenvolvedora Java",
-    "github": "giovannasantana"
+    "github": "giovannasantana",
+    "playlists": {
+        "jogos": [
+            {
+                "title": "Algum título",
+                "url": "url",
+                "thumb": "thumb do vídeo"
+            }
+        ],
+        "front-end": [
+            {
+                "title": "Algum título",
+                "url": "url",
+                "thumb": "thumb do vídeo"
+            }
+        ]
+    }
 }
