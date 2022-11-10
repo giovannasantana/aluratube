@@ -68,7 +68,7 @@ function Timeline(props) {
     //Retorno por expressão
     return (
         <div>
-            {playlistNames.map(function (playlistNames) {
+            {playlistNames.map((playlistNames) => {
                 return playlistNames;
             })}
         </div>
