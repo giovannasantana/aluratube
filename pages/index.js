@@ -63,10 +63,14 @@ function Header() {
 
 function Timeline(props) {
     console.log("Dentro do componente", props.playlists);
+    const playlistNames = Object.keys(props.playlists);
+    //Statement
+    //Retorno por expressão
     return (
         <div>
-            Timeline
-            Fro
+            {playlistNames.map(function (playlistNames) {
+                return playlistNames;
+            })}
         </div>
     )
 }
