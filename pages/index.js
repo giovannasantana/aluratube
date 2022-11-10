@@ -1,30 +1,45 @@
 import config from "../config.json";
 import styled from "styled-components";
+import { CSSReset } from "../src/components/CSSReset";
+import Menu from "../src/components/Menu";
+import { StyledTimeline } from "../src/components/Timeline";
 
 function HomePage() {
-    const estiloDaHomePage = { backgroundColor: "red" };
+    const estiloDaHomePage = {
+        //backgroundColor: "red" 
+    };
 
     //console.log(config.playlists);
 
     return (
-        <div style={estiloDaHomePage}>
-            <Menu></Menu>
-            <Header></Header>
-            <Timeline playlists={config.playlists}></Timeline>
-        </div>
+        <>
+            <CSSReset />
+            <div style={{
+                display: "flex",
+                flexDirection: "column",
+                flex: 1,
+                // backgroundColor: "red",
+            }}>
+                <Menu />
+                <Header></Header>
+                <Timeline playlists={config.playlists}>
+                    Conteúdo
+                </Timeline>
+            </div>
+        </>
     );
 }
 
 export default HomePage
 
 // Componentes em um mesmo arqueivo (podem ser feitos em arquivos diferentes)
-function Menu() {
-    return (
-        <div>
-            Menu
-        </div>
-    )
-}
+//function Menu() {
+//    return (
+//        <div>
+//            Menu
+//        </div>
+//    )
+//};
 
 
 const StyledHeader = styled.div`
@@ -34,6 +49,7 @@ const StyledHeader = styled.div`
         border-radius: 50%;
     }
     .user-info{
+        margin-top: 50px;
         display: flex;
         align-items: center;
         width: 100%;
@@ -68,7 +84,7 @@ function Timeline(props) {
     //Statement
     //Retorno por expressão
     return (
-        <div>
+        <StyledTimeline>
             {playlistNames.map((playlistName) => {
                 // Pra cada playlist os vídeos relacionados
                 const videos = props.playlists[playlistName];
@@ -91,7 +107,7 @@ function Timeline(props) {
                         </div>
                     </section>
                 )
-            })}
-        </div>
+            })};
+        </StyledTimeline>
     )
 }
