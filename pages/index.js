@@ -62,14 +62,35 @@ function Header() {
 }
 
 function Timeline(props) {
-    console.log("Dentro do componente", props.playlists);
+    // console.log("Dentro do componente", props.playlists);
+
     const playlistNames = Object.keys(props.playlists);
     //Statement
     //Retorno por expressão
     return (
         <div>
-            {playlistNames.map((playlistNames) => {
-                return playlistNames;
+            {playlistNames.map((playlistName) => {
+                // Pra cada playlist os vídeos relacionados
+                const videos = props.playlists[playlistName];
+                console.log(videos);
+                console.log(playlistNames);
+                return (
+                    <section>
+                        <h2>{playlistName}</h2>
+                        <div>
+                            {videos.map((video) => {
+                                return (
+                                    <a href={video.url}>
+                                        <img src={video.thumb} />
+                                        <span>
+                                            {video.title}
+                                        </span>
+                                    </a>
+                                );
+                            })};
+                        </div>
+                    </section>
+                )
             })}
         </div>
     )
